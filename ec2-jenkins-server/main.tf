@@ -57,7 +57,7 @@ resource "aws_instance" "my-ec2" {
   ami           = var.ami   
   instance_type = var.instance_type
   key_name      = var.key_name        
-  vpc_security_group_ids = aws_security_group.my-sg.id  
+  vpc_security_group_ids = [aws_security_group.my-sg.id]  
   root_block_device {
     volume_size = var.volume_size
   }
@@ -100,7 +100,7 @@ resource "aws_instance" "my-ec2" {
       # Output
       "echo 'Access Jenkins Server here --> http://'$ip':8080'",
       "echo 'Jenkins Initial Password: '$pass''",
-    
+   ] 
   }
 }  
 
