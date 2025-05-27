@@ -1,7 +1,7 @@
 # DEFINE ALL YOUR VARIABLES HERE
 
 instance_type = "t2.medium"
-ami           = "ami-0e86e20dae9224db8"   # Ubuntu 24.04
+ami           = "ami-0e35ddab05955cf57"   # Ubuntu 24.04
 key_name      = "ec2key"                     # Replace with your key-name without .pem extension
 volume_size   = 8
 region_name   = "us-east-1"
