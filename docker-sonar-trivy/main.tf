@@ -102,16 +102,6 @@ resource "aws_instance" "my-ec2-docker" {
       # Install SonarQube (as container)
       "docker run -d --name sonar -p 9000:9000 sonarqube:lts-community",
 
-      # Install Trivy
-      # Ref: https://aquasecurity.github.io/trivy/v0.18.3/installation/
-      "sudo apt-get install -y wget apt-transport-https gnupg",
-      "wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null",
-      "echo 'deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main' | sudo tee -a /etc/apt/sources.list.d/trivy.list",
-      "sudo apt-get update -y",
-      "sudo apt-get install trivy -y",
-
-      
-
       # Output
       "echo 'Access SonarQube Server here --> http://'$ip':9000'",
       "echo 'SonarQube Username & Password: admin'",
